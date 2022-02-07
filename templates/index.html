@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SAP con Flask</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+</head>
+<body>
+<h1>Sistema de Administracion de Personas</h1>
+<div class="cantpersonas">
+    Cantidad de registros: {{total_personas}}
+</div>
+<div class="agregar">
+    <a href="/agregar">Agregar una persona</a>
+</div>
+<div class="table">
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for persona in personas %}
+        <tr>
+            <td>{{persona.id}}</td>
+            <td>{{persona.nombre}}</td>
+            <td>{{persona.apellido}}</td>
+            <td>{{persona.email}}</td>
+            <td><a href="/ver/{{persona.id}}">Ver</a></td>
+            <td><a href="/editar/{{persona.id}}">Editar</a></td>
+            <td><a href="/eliminar/{{persona.id}}">Eliminar</a></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

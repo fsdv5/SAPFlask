@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nuevo Registro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+
+</head>
+<body>
+<h1>Agregar Persona</h1>
+<form action="" method="POST">
+    {{personaForm.csrf_token}}
+    <p>
+        {{personaForm.nombre.label}} <br>
+        {{personaForm.nombre(size=30)}}
+    </p>
+    <p>
+        {{personaForm.apellido.label}} <br>
+        {{personaForm.apellido(size=30)}}
+    </p>
+    <p>
+        {{personaForm.email.label}} <br>
+        {{personaForm.email(size=30)}}
+    </p>
+    <p>
+        {{personaForm.enviar()}}
+    </p>
+</form>
+</body>
+</html>
