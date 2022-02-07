@@ -9,10 +9,10 @@ from models import Persona
 app = Flask(__name__)
 
 #Configuracion de bd
-USER_DB = 'postgres'
-PASS_DB = 'admin'
-URL_DB = 'localhost'
-NAME_DB = 'sap_flask_db'
+USER_DB = 'usuariodb'
+PASS_DB = 'passdb'
+URL_DB = 'urldb'
+NAME_DB = 'nombredb'
 FULL_URL_DB = f'postgresql://{USER_DB}:{PASS_DB}@{URL_DB}/{NAME_DB}'
 
 app.config['SQLALCHEMY_DATABASE_URI'] = FULL_URL_DB
