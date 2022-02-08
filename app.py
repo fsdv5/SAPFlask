@@ -26,7 +26,7 @@ migrate = Migrate()
 migrate.init_app(app, db)
 
 #Configuracion de flask-wtf
-app.config['SECRET_KEY']='llave_secreta'
+app.config['SECRET_KEY']='\xf0?a\x9a\\\xff\xd4;\x0c\xcbHi'
 
 
 @app.route('/')
